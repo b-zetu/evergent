@@ -1,0 +1,248 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-legal-hold-heading" data-cy="LegalHoldCreateUpdateHeading" jhiTranslate="evergentApp.legalHold.home.createOrEditLabel">
+        Create or edit a Legal Hold
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.beneficiaryName" for="field_beneficiaryName"
+            >Beneficiary Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="beneficiaryName"
+            id="field_beneficiaryName"
+            data-cy="beneficiaryName"
+            formControlName="beneficiaryName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.type" for="field_type">Type</label>
+          <input type="text" class="form-control" name="type" id="field_type" data-cy="type" formControlName="type" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.totalAmount" for="field_totalAmount">Total Amount</label>
+          <input
+            type="number"
+            class="form-control"
+            name="totalAmount"
+            id="field_totalAmount"
+            data-cy="totalAmount"
+            formControlName="totalAmount"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.amountLeft" for="field_amountLeft">Amount Left</label>
+          <input
+            type="number"
+            class="form-control"
+            name="amountLeft"
+            id="field_amountLeft"
+            data-cy="amountLeft"
+            formControlName="amountLeft"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.poprireNumber" for="field_poprireNumber">Poprire Number</label>
+          <input
+            type="text"
+            class="form-control"
+            name="poprireNumber"
+            id="field_poprireNumber"
+            data-cy="poprireNumber"
+            formControlName="poprireNumber"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.poprireDate" for="field_poprireDate">Poprire Date</label>
+          <div class="input-group">
+            <input
+              id="field_poprireDate"
+              data-cy="poprireDate"
+              type="text"
+              class="form-control"
+              name="poprireDate"
+              ngbDatepicker
+              #poprireDateDp="ngbDatepicker"
+              formControlName="poprireDate"
+            />
+            <button type="button" class="btn btn-secondary" (click)="poprireDateDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.poprireDocumentNumber" for="field_poprireDocumentNumber"
+            >Poprire Document Number</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="poprireDocumentNumber"
+            id="field_poprireDocumentNumber"
+            data-cy="poprireDocumentNumber"
+            formControlName="poprireDocumentNumber"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.poprireDocumentDate" for="field_poprireDocumentDate"
+            >Poprire Document Date</label
+          >
+          <div class="input-group">
+            <input
+              id="field_poprireDocumentDate"
+              data-cy="poprireDocumentDate"
+              type="text"
+              class="form-control"
+              name="poprireDocumentDate"
+              ngbDatepicker
+              #poprireDocumentDateDp="ngbDatepicker"
+              formControlName="poprireDocumentDate"
+            />
+            <button type="button" class="btn btn-secondary" (click)="poprireDocumentDateDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.sistareNumber" for="field_sistareNumber">Sistare Number</label>
+          <input
+            type="text"
+            class="form-control"
+            name="sistareNumber"
+            id="field_sistareNumber"
+            data-cy="sistareNumber"
+            formControlName="sistareNumber"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.sistareDate" for="field_sistareDate">Sistare Date</label>
+          <div class="input-group">
+            <input
+              id="field_sistareDate"
+              data-cy="sistareDate"
+              type="text"
+              class="form-control"
+              name="sistareDate"
+              ngbDatepicker
+              #sistareDateDp="ngbDatepicker"
+              formControlName="sistareDate"
+            />
+            <button type="button" class="btn btn-secondary" (click)="sistareDateDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.sistareIntrareNumber" for="field_sistareIntrareNumber"
+            >Sistare Intrare Number</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sistareIntrareNumber"
+            id="field_sistareIntrareNumber"
+            data-cy="sistareIntrareNumber"
+            formControlName="sistareIntrareNumber"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.sistareIntrareDate" for="field_sistareIntrareDate"
+            >Sistare Intrare Date</label
+          >
+          <div class="input-group">
+            <input
+              id="field_sistareIntrareDate"
+              data-cy="sistareIntrareDate"
+              type="text"
+              class="form-control"
+              name="sistareIntrareDate"
+              ngbDatepicker
+              #sistareIntrareDateDp="ngbDatepicker"
+              formControlName="sistareIntrareDate"
+            />
+            <button type="button" class="btn btn-secondary" (click)="sistareIntrareDateDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.status" for="field_status">Status</label>
+          <input type="text" class="form-control" name="status" id="field_status" data-cy="status" formControlName="status" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.shareholder" for="field_shareholder">Shareholder</label>
+          <select
+            class="form-control"
+            id="field_shareholder"
+            data-cy="shareholder"
+            name="shareholder"
+            formControlName="shareholder"
+            [compareWith]="compareShareholder"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="shareholderOption" *ngFor="let shareholderOption of shareholdersSharedCollection">
+              {{ shareholderOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.legalHold.paymentOption" for="field_paymentOption">Payment Option</label>
+          <select
+            class="form-control"
+            id="field_paymentOption"
+            data-cy="paymentOption"
+            name="paymentOption"
+            formControlName="paymentOption"
+            [compareWith]="comparePaymentOption"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="paymentOptionOption" *ngFor="let paymentOptionOption of paymentOptionsSharedCollection">
+              {{ paymentOptionOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

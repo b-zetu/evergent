@@ -1,0 +1,146 @@
+<div>
+  <h2 id="page-heading" data-cy="DividendShareholderHeading">
+    <span jhiTranslate="evergentApp.dividendShareholder.home.title">Dividend Shareholders</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="evergentApp.dividendShareholder.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-dividend-shareholder"
+        [routerLink]="['/dividend-shareholder/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="evergentApp.dividendShareholder.home.createLabel"> Create a new Dividend Shareholder </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="dividendShareholders?.length === 0">
+    <span jhiTranslate="evergentApp.dividendShareholder.home.notFound">No Dividend Shareholders found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="dividendShareholders && dividendShareholders.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="sharesNo">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.dividendShareholder.sharesNo">Shares No</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="isResident">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.dividendShareholder.isResident">Is Resident</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="taxValue">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.dividendShareholder.taxValue">Tax Value</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="status">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.dividendShareholder.status">Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="shareholder.id">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.dividendShareholder.shareholder">Shareholder</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dividendRegister.id">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.dividendShareholder.dividendRegister">Dividend Register</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="paymentOption.id">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.dividendShareholder.paymentOption">Payment Option</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dividendShareholder of dividendShareholders; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/dividend-shareholder', dividendShareholder.id, 'view']">{{ dividendShareholder.id }}</a>
+          </td>
+          <td>{{ dividendShareholder.sharesNo }}</td>
+          <td>{{ dividendShareholder.isResident }}</td>
+          <td>{{ dividendShareholder.taxValue }}</td>
+          <td>{{ dividendShareholder.status }}</td>
+          <td>
+            <div *ngIf="dividendShareholder.shareholder">
+              <a [routerLink]="['/shareholder', dividendShareholder.shareholder.id, 'view']">{{ dividendShareholder.shareholder.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="dividendShareholder.dividendRegister">
+              <a [routerLink]="['/dividend-register', dividendShareholder.dividendRegister.id, 'view']">{{
+                dividendShareholder.dividendRegister.id
+              }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="dividendShareholder.paymentOption">
+              <a [routerLink]="['/payment-option', dividendShareholder.paymentOption.id, 'view']">{{
+                dividendShareholder.paymentOption.id
+              }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/dividend-shareholder', dividendShareholder.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/dividend-shareholder', dividendShareholder.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(dividendShareholder)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "evergentApp": {
+    "voteOption": {
+      "home": {
+        "title": "Vote Options",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Vote Option",
+        "createOrEditLabel": "Creeare sau editare Vote Option",
+        "notFound": "No Vote Options found"
+      },
+      "created": "A fost creată o nouă entitate Vote Option cu identificatorul {{ param }}",
+      "updated": "Vote Option cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Vote Option cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Vote Option {{ id }}?"
+      },
+      "detail": {
+        "title": "Vote Option"
+      },
+      "id": "ID",
+      "code": "Code",
+      "text": "Text",
+      "voteEntryXVoteOption": "Vote Entry X Vote Option",
+      "voteProposal": "Vote Proposal"
+    }
+  }
+}

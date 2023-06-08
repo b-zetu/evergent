@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sysParameter">
+      <h2 data-cy="sysParameterDetailsHeading"><span jhiTranslate="evergentApp.sysParameter.detail.title">Sys Parameter</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ sysParameter.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.sysParameter.key">Key</span></dt>
+        <dd>
+          <span>{{ sysParameter.key }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.sysParameter.value">Value</span></dt>
+        <dd>
+          <span>{{ sysParameter.value }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sys-parameter', sysParameter.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

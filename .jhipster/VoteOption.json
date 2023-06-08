@@ -1,0 +1,37 @@
+{
+  "applications": "*",
+  "changelogDate": "20230608122701",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "vote_option",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "text",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "VoteOption",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "voteEntryXVoteOption",
+      "otherEntityRelationshipName": "voteOption",
+      "relationshipName": "voteEntryXVoteOption",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "voteProposal",
+      "otherEntityRelationshipName": "voteOption",
+      "relationshipName": "voteProposal",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

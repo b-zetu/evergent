@@ -1,0 +1,26 @@
+{
+  "evergentApp": {
+    "shareholderXInheritance": {
+      "home": {
+        "title": "Shareholder X Inheritances",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Shareholder X Inheritance",
+        "createOrEditLabel": "Create or edit a Shareholder X Inheritance",
+        "notFound": "No Shareholder X Inheritances found"
+      },
+      "created": "A new Shareholder X Inheritance is created with identifier {{ param }}",
+      "updated": "A Shareholder X Inheritance is updated with identifier {{ param }}",
+      "deleted": "A Shareholder X Inheritance is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Shareholder X Inheritance {{ id }}?"
+      },
+      "detail": {
+        "title": "Shareholder X Inheritance"
+      },
+      "id": "ID",
+      "deceased": "Deceased",
+      "receiver": "Receiver",
+      "inheritance": "Inheritance"
+    }
+  }
+}

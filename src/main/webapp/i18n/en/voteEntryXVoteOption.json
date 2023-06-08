@@ -1,0 +1,25 @@
+{
+  "evergentApp": {
+    "voteEntryXVoteOption": {
+      "home": {
+        "title": "Vote Entry X Vote Options",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Vote Entry X Vote Option",
+        "createOrEditLabel": "Create or edit a Vote Entry X Vote Option",
+        "notFound": "No Vote Entry X Vote Options found"
+      },
+      "created": "A new Vote Entry X Vote Option is created with identifier {{ param }}",
+      "updated": "A Vote Entry X Vote Option is updated with identifier {{ param }}",
+      "deleted": "A Vote Entry X Vote Option is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Vote Entry X Vote Option {{ id }}?"
+      },
+      "detail": {
+        "title": "Vote Entry X Vote Option"
+      },
+      "id": "ID",
+      "voteEntry": "Vote Entry",
+      "voteOption": "Vote Option"
+    }
+  }
+}

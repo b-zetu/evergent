@@ -1,0 +1,43 @@
+{
+  "applications": "*",
+  "changelogDate": "20230608122703",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "inheritance",
+  "fields": [
+    {
+      "fieldName": "operationDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "documentNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "documentDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "sharesNo",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Inheritance",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "shareholderXInheritance",
+      "otherEntityRelationshipName": "inheritance",
+      "relationshipName": "shareholderXInheritance",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

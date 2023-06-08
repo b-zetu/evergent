@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dividendCalculation">
+      <h2 data-cy="dividendCalculationDetailsHeading">
+        <span jhiTranslate="evergentApp.dividendCalculation.detail.title">Dividend Calculation</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ dividendCalculation.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.dividendCalculation.totalNetAmount">Total Net Amount</span></dt>
+        <dd>
+          <span>{{ dividendCalculation.totalNetAmount }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.dividendCalculation.taxAmountCalculated">Tax Amount Calculated</span></dt>
+        <dd>
+          <span>{{ dividendCalculation.taxAmountCalculated }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.dividendCalculation.totalGrossAmount">Total Gross Amount</span></dt>
+        <dd>
+          <span>{{ dividendCalculation.totalGrossAmount }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.dividendCalculation.dividendShareholder">Dividend Shareholder</span></dt>
+        <dd>
+          <div *ngIf="dividendCalculation.dividendShareholder">
+            <a [routerLink]="['/dividend-shareholder', dividendCalculation.dividendShareholder.id, 'view']">{{
+              dividendCalculation.dividendShareholder.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/dividend-calculation', dividendCalculation.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="voteEntry">
+      <h2 data-cy="voteEntryDetailsHeading"><span jhiTranslate="evergentApp.voteEntry.detail.title">Vote Entry</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ voteEntry.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.voteEntry.shareholder">Shareholder</span></dt>
+        <dd>
+          <div *ngIf="voteEntry.shareholder">
+            <a [routerLink]="['/shareholder', voteEntry.shareholder.id, 'view']">{{ voteEntry.shareholder.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.voteEntry.voteProposal">Vote Proposal</span></dt>
+        <dd>
+          <div *ngIf="voteEntry.voteProposal">
+            <a [routerLink]="['/vote-proposal', voteEntry.voteProposal.id, 'view']">{{ voteEntry.voteProposal.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/vote-entry', voteEntry.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

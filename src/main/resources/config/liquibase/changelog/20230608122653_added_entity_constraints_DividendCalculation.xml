@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity DividendCalculation.
+    -->
+    <changeSet id="20230608122653-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="dividend_shareholder_id"
+                                 baseTableName="dividend_calculation"
+                                 constraintName="fk_dividend_calculation__dividend_shareholder_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dividend_shareholder"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,203 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-shareholder-heading"
+        data-cy="ShareholderCreateUpdateHeading"
+        jhiTranslate="evergentApp.shareholder.home.createOrEditLabel"
+      >
+        Create or edit a Shareholder
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.shareholderIdDC" for="field_shareholderIdDC"
+            >Shareholder Id DC</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="shareholderIdDC"
+            id="field_shareholderIdDC"
+            data-cy="shareholderIdDC"
+            formControlName="shareholderIdDC"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.cnp" for="field_cnp">Cnp</label>
+          <input type="text" class="form-control" name="cnp" id="field_cnp" data-cy="cnp" formControlName="cnp" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.firstName" for="field_firstName">First Name</label>
+          <input type="text" class="form-control" name="firstName" id="field_firstName" data-cy="firstName" formControlName="firstName" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.lastName" for="field_lastName">Last Name</label>
+          <input type="text" class="form-control" name="lastName" id="field_lastName" data-cy="lastName" formControlName="lastName" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.sharesNo" for="field_sharesNo">Shares No</label>
+          <input type="number" class="form-control" name="sharesNo" id="field_sharesNo" data-cy="sharesNo" formControlName="sharesNo" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.isPf" for="field_isPf">Is Pf</label>
+          <input type="checkbox" class="form-check" name="isPf" id="field_isPf" data-cy="isPf" formControlName="isPf" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.isResident" for="field_isResident">Is Resident</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="isResident"
+            id="field_isResident"
+            data-cy="isResident"
+            formControlName="isResident"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.taxValue" for="field_taxValue">Tax Value</label>
+          <input type="number" class="form-control" name="taxValue" id="field_taxValue" data-cy="taxValue" formControlName="taxValue" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.status" for="field_status">Status</label>
+          <input type="text" class="form-control" name="status" id="field_status" data-cy="status" formControlName="status" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.countryResidence" for="field_countryResidence"
+            >Country Residence</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="countryResidence"
+            id="field_countryResidence"
+            data-cy="countryResidence"
+            formControlName="countryResidence"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.countyResidence" for="field_countyResidence"
+            >County Residence</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="countyResidence"
+            id="field_countyResidence"
+            data-cy="countyResidence"
+            formControlName="countyResidence"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.cityResidence" for="field_cityResidence">City Residence</label>
+          <input
+            type="number"
+            class="form-control"
+            name="cityResidence"
+            id="field_cityResidence"
+            data-cy="cityResidence"
+            formControlName="cityResidence"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.villageResidence" for="field_villageResidence"
+            >Village Residence</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="villageResidence"
+            id="field_villageResidence"
+            data-cy="villageResidence"
+            formControlName="villageResidence"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.foreignLocalityResidence" for="field_foreignLocalityResidence"
+            >Foreign Locality Residence</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="foreignLocalityResidence"
+            id="field_foreignLocalityResidence"
+            data-cy="foreignLocalityResidence"
+            formControlName="foreignLocalityResidence"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.streetResidence" for="field_streetResidence"
+            >Street Residence</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="streetResidence"
+            id="field_streetResidence"
+            data-cy="streetResidence"
+            formControlName="streetResidence"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.streetNo" for="field_streetNo">Street No</label>
+          <input type="text" class="form-control" name="streetNo" id="field_streetNo" data-cy="streetNo" formControlName="streetNo" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.shareholder.paymentOption" for="field_paymentOption">Payment Option</label>
+          <select
+            class="form-control"
+            id="field_paymentOption"
+            data-cy="paymentOption"
+            name="paymentOption"
+            formControlName="paymentOption"
+            [compareWith]="comparePaymentOption"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="paymentOptionOption" *ngFor="let paymentOptionOption of paymentOptionsSharedCollection">
+              {{ paymentOptionOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

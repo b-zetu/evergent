@@ -1,0 +1,103 @@
+<div>
+  <h2 id="page-heading" data-cy="VoteEntryXVoteOptionHeading">
+    <span jhiTranslate="evergentApp.voteEntryXVoteOption.home.title">Vote Entry X Vote Options</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="evergentApp.voteEntryXVoteOption.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-vote-entry-x-vote-option"
+        [routerLink]="['/vote-entry-x-vote-option/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="evergentApp.voteEntryXVoteOption.home.createLabel"> Create a new Vote Entry X Vote Option </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="voteEntryXVoteOptions?.length === 0">
+    <span jhiTranslate="evergentApp.voteEntryXVoteOption.home.notFound">No Vote Entry X Vote Options found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="voteEntryXVoteOptions && voteEntryXVoteOptions.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="voteEntry.id">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.voteEntryXVoteOption.voteEntry">Vote Entry</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="voteOption.id">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.voteEntryXVoteOption.voteOption">Vote Option</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let voteEntryXVoteOption of voteEntryXVoteOptions; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/vote-entry-x-vote-option', voteEntryXVoteOption.id, 'view']">{{ voteEntryXVoteOption.id }}</a>
+          </td>
+          <td>
+            <div *ngIf="voteEntryXVoteOption.voteEntry">
+              <a [routerLink]="['/vote-entry', voteEntryXVoteOption.voteEntry.id, 'view']">{{ voteEntryXVoteOption.voteEntry.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="voteEntryXVoteOption.voteOption">
+              <a [routerLink]="['/vote-option', voteEntryXVoteOption.voteOption.id, 'view']">{{ voteEntryXVoteOption.voteOption.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/vote-entry-x-vote-option', voteEntryXVoteOption.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/vote-entry-x-vote-option', voteEntryXVoteOption.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(voteEntryXVoteOption)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

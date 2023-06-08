@@ -1,0 +1,31 @@
+{
+  "evergentApp": {
+    "dividendShareholder": {
+      "home": {
+        "title": "Dividend Shareholders",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Dividend Shareholder",
+        "createOrEditLabel": "Creeare sau editare Dividend Shareholder",
+        "notFound": "No Dividend Shareholders found"
+      },
+      "created": "A fost creată o nouă entitate Dividend Shareholder cu identificatorul {{ param }}",
+      "updated": "Dividend Shareholder cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Dividend Shareholder cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Dividend Shareholder {{ id }}?"
+      },
+      "detail": {
+        "title": "Dividend Shareholder"
+      },
+      "id": "ID",
+      "sharesNo": "Shares No",
+      "isResident": "Is Resident",
+      "taxValue": "Tax Value",
+      "status": "Status",
+      "dividendCalculation": "Dividend Calculation",
+      "shareholder": "Shareholder",
+      "dividendRegister": "Dividend Register",
+      "paymentOption": "Payment Option"
+    }
+  }
+}

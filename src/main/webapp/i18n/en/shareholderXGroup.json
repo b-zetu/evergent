@@ -1,0 +1,25 @@
+{
+  "evergentApp": {
+    "shareholderXGroup": {
+      "home": {
+        "title": "Shareholder X Groups",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Shareholder X Group",
+        "createOrEditLabel": "Create or edit a Shareholder X Group",
+        "notFound": "No Shareholder X Groups found"
+      },
+      "created": "A new Shareholder X Group is created with identifier {{ param }}",
+      "updated": "A Shareholder X Group is updated with identifier {{ param }}",
+      "deleted": "A Shareholder X Group is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Shareholder X Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Shareholder X Group"
+      },
+      "id": "ID",
+      "shareholder": "Shareholder",
+      "group": "Group"
+    }
+  }
+}

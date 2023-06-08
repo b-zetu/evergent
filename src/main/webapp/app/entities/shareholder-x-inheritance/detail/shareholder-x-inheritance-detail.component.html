@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="shareholderXInheritance">
+      <h2 data-cy="shareholderXInheritanceDetailsHeading">
+        <span jhiTranslate="evergentApp.shareholderXInheritance.detail.title">Shareholder X Inheritance</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ shareholderXInheritance.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.shareholderXInheritance.deceased">Deceased</span></dt>
+        <dd>
+          <div *ngIf="shareholderXInheritance.deceased">
+            <a [routerLink]="['/shareholder', shareholderXInheritance.deceased.id, 'view']">{{ shareholderXInheritance.deceased.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.shareholderXInheritance.receiver">Receiver</span></dt>
+        <dd>
+          <div *ngIf="shareholderXInheritance.receiver">
+            <a [routerLink]="['/shareholder', shareholderXInheritance.receiver.id, 'view']">{{ shareholderXInheritance.receiver.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.shareholderXInheritance.inheritance">Inheritance</span></dt>
+        <dd>
+          <div *ngIf="shareholderXInheritance.inheritance">
+            <a [routerLink]="['/inheritance', shareholderXInheritance.inheritance.id, 'view']">{{
+              shareholderXInheritance.inheritance.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/shareholder-x-inheritance', shareholderXInheritance.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

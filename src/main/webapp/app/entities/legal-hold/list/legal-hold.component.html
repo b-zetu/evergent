@@ -1,0 +1,194 @@
+<div>
+  <h2 id="page-heading" data-cy="LegalHoldHeading">
+    <span jhiTranslate="evergentApp.legalHold.home.title">Legal Holds</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="evergentApp.legalHold.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-legal-hold"
+        [routerLink]="['/legal-hold/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="evergentApp.legalHold.home.createLabel"> Create a new Legal Hold </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="legalHolds?.length === 0">
+    <span jhiTranslate="evergentApp.legalHold.home.notFound">No Legal Holds found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="legalHolds && legalHolds.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="beneficiaryName">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.beneficiaryName">Beneficiary Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="type">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.type">Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="totalAmount">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.totalAmount">Total Amount</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="amountLeft">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.amountLeft">Amount Left</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="poprireNumber">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.poprireNumber">Poprire Number</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="poprireDate">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.poprireDate">Poprire Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="poprireDocumentNumber">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.poprireDocumentNumber">Poprire Document Number</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="poprireDocumentDate">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.poprireDocumentDate">Poprire Document Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="sistareNumber">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.sistareNumber">Sistare Number</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="sistareDate">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.sistareDate">Sistare Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="sistareIntrareNumber">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.sistareIntrareNumber">Sistare Intrare Number</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="sistareIntrareDate">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.sistareIntrareDate">Sistare Intrare Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="status">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.status">Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="shareholder.id">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.shareholder">Shareholder</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="paymentOption.id">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.legalHold.paymentOption">Payment Option</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let legalHold of legalHolds; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/legal-hold', legalHold.id, 'view']">{{ legalHold.id }}</a>
+          </td>
+          <td>{{ legalHold.beneficiaryName }}</td>
+          <td>{{ legalHold.type }}</td>
+          <td>{{ legalHold.totalAmount }}</td>
+          <td>{{ legalHold.amountLeft }}</td>
+          <td>{{ legalHold.poprireNumber }}</td>
+          <td>{{ legalHold.poprireDate | formatMediumDate }}</td>
+          <td>{{ legalHold.poprireDocumentNumber }}</td>
+          <td>{{ legalHold.poprireDocumentDate | formatMediumDate }}</td>
+          <td>{{ legalHold.sistareNumber }}</td>
+          <td>{{ legalHold.sistareDate | formatMediumDate }}</td>
+          <td>{{ legalHold.sistareIntrareNumber }}</td>
+          <td>{{ legalHold.sistareIntrareDate | formatMediumDate }}</td>
+          <td>{{ legalHold.status }}</td>
+          <td>
+            <div *ngIf="legalHold.shareholder">
+              <a [routerLink]="['/shareholder', legalHold.shareholder.id, 'view']">{{ legalHold.shareholder.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="legalHold.paymentOption">
+              <a [routerLink]="['/payment-option', legalHold.paymentOption.id, 'view']">{{ legalHold.paymentOption.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/legal-hold', legalHold.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/legal-hold', legalHold.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(legalHold)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

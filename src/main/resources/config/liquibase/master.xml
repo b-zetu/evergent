@@ -11,7 +11,35 @@
     <property name="datetimeType" value="datetime(6)" dbms="mysql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122650_added_entity_PaymentOption.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122651_added_entity_Shareholder.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122652_added_entity_DividendShareholder.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122653_added_entity_DividendCalculation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122654_added_entity_DividendRegister.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122655_added_entity_LegalHold.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122656_added_entity_Payment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122657_added_entity_Communication.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122658_added_entity_SysParameter.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122659_added_entity_VoteEntry.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122700_added_entity_VoteProposal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122701_added_entity_VoteOption.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122702_added_entity_Group.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122703_added_entity_Inheritance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122704_added_entity_ShareholderXInheritance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122705_added_entity_ShareholderXGroup.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122706_added_entity_VoteEntryXVoteOption.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20230608122651_added_entity_constraints_Shareholder.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122652_added_entity_constraints_DividendShareholder.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122653_added_entity_constraints_DividendCalculation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122655_added_entity_constraints_LegalHold.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122656_added_entity_constraints_Payment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122657_added_entity_constraints_Communication.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122659_added_entity_constraints_VoteEntry.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122701_added_entity_constraints_VoteOption.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122704_added_entity_constraints_ShareholderXInheritance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122705_added_entity_constraints_ShareholderXGroup.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230608122706_added_entity_constraints_VoteEntryXVoteOption.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

@@ -1,0 +1,137 @@
+
+entity PaymentOption {
+	type String,
+    detail1 String,
+    detail2 String
+}
+
+entity Shareholder {
+	shareholderIdDC Long,
+	cnp String,
+	firstName String,
+	lastName String,
+	sharesNo Integer,
+	isPf Boolean,
+	isResident Boolean,
+	taxValue Integer,
+	status String,
+	countryResidence String,
+	countyResidence Integer,
+	cityResidence Integer,
+	villageResidence Integer,
+	foreignLocalityResidence String,
+	streetResidence String,
+	streetNo String
+}
+
+entity DividendShareholder {
+    sharesNo Integer,
+    isResident Boolean,
+    taxValue Integer,
+    status String
+}
+
+entity DividendCalculation {
+    totalNetAmount BigDecimal,
+    taxAmountCalculated BigDecimal,
+    totalGrossAmount BigDecimal
+}
+
+entity DividendRegister {
+	referenceDate LocalDate,
+    dividendGrossValue BigDecimal,
+    status String
+}
+
+entity LegalHold {
+    beneficiaryName String,
+    type String,
+    totalAmount BigDecimal,
+    amountLeft BigDecimal,
+    poprireNumber String,
+    poprireDate LocalDate,
+    poprireDocumentNumber String,
+    poprireDocumentDate LocalDate,
+    sistareNumber String,
+    sistareDate LocalDate,
+    sistareIntrareNumber String,
+    sistareIntrareDate LocalDate,
+    status String
+}
+
+entity Payment {
+    value BigDecimal,
+}
+
+entity Communication {
+    type String,
+    message String,
+    status String
+}
+
+entity SysParameter {
+	key String,
+    value String
+}
+
+entity VoteEntry {
+}
+
+entity VoteProposal {
+	title String,
+    text String,
+    startDate LocalDate,
+    endDate LocalDate,
+    status String
+}
+
+entity VoteOption {
+	code String,
+    text String,
+}
+
+entity Group {
+	name String,
+    code String
+}
+
+entity Inheritance {
+	operationDate LocalDate,
+    documentNumber String,
+    documentDate LocalDate,
+    sharesNo Integer,
+    status String
+}
+
+entity ShareholderXInheritance {
+}
+
+entity ShareholderXGroup {
+}
+
+entity VoteEntryXVoteOption {
+}
+
+relationship OneToMany {
+	Shareholder to Communication,
+    Shareholder to DividendShareholder,
+    Shareholder to LegalHold,
+    Shareholder to Payment,
+    Shareholder to VoteEntry,
+    DividendRegister to DividendShareholder,
+    DividendShareholder to DividendCalculation,
+    DividendCalculation to Payment,
+    PaymentOption to DividendShareholder,
+    PaymentOption to LegalHold,
+    PaymentOption to Shareholder,
+    PaymentOption to Payment,
+    VoteProposal to VoteEntry,
+    VoteProposal to VoteOption,
+    Shareholder{deceased} to ShareholderXInheritance{deceased},
+    Shareholder{receiver} to ShareholderXInheritance{receiver},
+    Inheritance to ShareholderXInheritance,
+    Shareholder to ShareholderXGroup,
+    Group to ShareholderXGroup,
+    VoteEntry to VoteEntryXVoteOption,
+    VoteOption to VoteEntryXVoteOption
+}

@@ -1,0 +1,25 @@
+{
+  "evergentApp": {
+    "sysParameter": {
+      "home": {
+        "title": "Sys Parameters",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sys Parameter",
+        "createOrEditLabel": "Create or edit a Sys Parameter",
+        "notFound": "No Sys Parameters found"
+      },
+      "created": "A new Sys Parameter is created with identifier {{ param }}",
+      "updated": "A Sys Parameter is updated with identifier {{ param }}",
+      "deleted": "A Sys Parameter is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sys Parameter {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Parameter"
+      },
+      "id": "ID",
+      "key": "Key",
+      "value": "Value"
+    }
+  }
+}

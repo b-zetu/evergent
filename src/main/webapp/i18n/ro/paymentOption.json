@@ -1,0 +1,30 @@
+{
+  "evergentApp": {
+    "paymentOption": {
+      "home": {
+        "title": "Payment Options",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Payment Option",
+        "createOrEditLabel": "Creeare sau editare Payment Option",
+        "notFound": "No Payment Options found"
+      },
+      "created": "A fost creată o nouă entitate Payment Option cu identificatorul {{ param }}",
+      "updated": "Payment Option cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Payment Option cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Payment Option {{ id }}?"
+      },
+      "detail": {
+        "title": "Payment Option"
+      },
+      "id": "ID",
+      "type": "Type",
+      "detail1": "Detail 1",
+      "detail2": "Detail 2",
+      "dividendShareholder": "Dividend Shareholder",
+      "legalHold": "Legal Hold",
+      "shareholder": "Shareholder",
+      "payment": "Payment"
+    }
+  }
+}

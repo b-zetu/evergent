@@ -1,0 +1,26 @@
+{
+  "evergentApp": {
+    "group": {
+      "home": {
+        "title": "Groups",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Group",
+        "createOrEditLabel": "Creeare sau editare Group",
+        "notFound": "No Groups found"
+      },
+      "created": "A fost creată o nouă entitate Group cu identificatorul {{ param }}",
+      "updated": "Group cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Group cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Group"
+      },
+      "id": "ID",
+      "name": "Name",
+      "code": "Code",
+      "shareholderXGroup": "Shareholder X Group"
+    }
+  }
+}

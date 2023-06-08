@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="payment">
+      <h2 data-cy="paymentDetailsHeading"><span jhiTranslate="evergentApp.payment.detail.title">Payment</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ payment.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.payment.value">Value</span></dt>
+        <dd>
+          <span>{{ payment.value }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.payment.shareholder">Shareholder</span></dt>
+        <dd>
+          <div *ngIf="payment.shareholder">
+            <a [routerLink]="['/shareholder', payment.shareholder.id, 'view']">{{ payment.shareholder.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.payment.dividendCalculation">Dividend Calculation</span></dt>
+        <dd>
+          <div *ngIf="payment.dividendCalculation">
+            <a [routerLink]="['/dividend-calculation', payment.dividendCalculation.id, 'view']">{{ payment.dividendCalculation.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.payment.paymentOption">Payment Option</span></dt>
+        <dd>
+          <div *ngIf="payment.paymentOption">
+            <a [routerLink]="['/payment-option', payment.paymentOption.id, 'view']">{{ payment.paymentOption.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/payment', payment.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

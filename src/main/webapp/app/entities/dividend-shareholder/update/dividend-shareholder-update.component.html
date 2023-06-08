@@ -1,0 +1,120 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-dividend-shareholder-heading"
+        data-cy="DividendShareholderCreateUpdateHeading"
+        jhiTranslate="evergentApp.dividendShareholder.home.createOrEditLabel"
+      >
+        Create or edit a Dividend Shareholder
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.dividendShareholder.sharesNo" for="field_sharesNo">Shares No</label>
+          <input type="number" class="form-control" name="sharesNo" id="field_sharesNo" data-cy="sharesNo" formControlName="sharesNo" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.dividendShareholder.isResident" for="field_isResident">Is Resident</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="isResident"
+            id="field_isResident"
+            data-cy="isResident"
+            formControlName="isResident"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.dividendShareholder.taxValue" for="field_taxValue">Tax Value</label>
+          <input type="number" class="form-control" name="taxValue" id="field_taxValue" data-cy="taxValue" formControlName="taxValue" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.dividendShareholder.status" for="field_status">Status</label>
+          <input type="text" class="form-control" name="status" id="field_status" data-cy="status" formControlName="status" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.dividendShareholder.shareholder" for="field_shareholder">Shareholder</label>
+          <select
+            class="form-control"
+            id="field_shareholder"
+            data-cy="shareholder"
+            name="shareholder"
+            formControlName="shareholder"
+            [compareWith]="compareShareholder"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="shareholderOption" *ngFor="let shareholderOption of shareholdersSharedCollection">
+              {{ shareholderOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.dividendShareholder.dividendRegister" for="field_dividendRegister"
+            >Dividend Register</label
+          >
+          <select
+            class="form-control"
+            id="field_dividendRegister"
+            data-cy="dividendRegister"
+            name="dividendRegister"
+            formControlName="dividendRegister"
+            [compareWith]="compareDividendRegister"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="dividendRegisterOption" *ngFor="let dividendRegisterOption of dividendRegistersSharedCollection">
+              {{ dividendRegisterOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="evergentApp.dividendShareholder.paymentOption" for="field_paymentOption"
+            >Payment Option</label
+          >
+          <select
+            class="form-control"
+            id="field_paymentOption"
+            data-cy="paymentOption"
+            name="paymentOption"
+            formControlName="paymentOption"
+            [compareWith]="comparePaymentOption"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="paymentOptionOption" *ngFor="let paymentOptionOption of paymentOptionsSharedCollection">
+              {{ paymentOptionOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

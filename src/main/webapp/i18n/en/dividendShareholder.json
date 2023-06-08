@@ -1,0 +1,31 @@
+{
+  "evergentApp": {
+    "dividendShareholder": {
+      "home": {
+        "title": "Dividend Shareholders",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Dividend Shareholder",
+        "createOrEditLabel": "Create or edit a Dividend Shareholder",
+        "notFound": "No Dividend Shareholders found"
+      },
+      "created": "A new Dividend Shareholder is created with identifier {{ param }}",
+      "updated": "A Dividend Shareholder is updated with identifier {{ param }}",
+      "deleted": "A Dividend Shareholder is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dividend Shareholder {{ id }}?"
+      },
+      "detail": {
+        "title": "Dividend Shareholder"
+      },
+      "id": "ID",
+      "sharesNo": "Shares No",
+      "isResident": "Is Resident",
+      "taxValue": "Tax Value",
+      "status": "Status",
+      "dividendCalculation": "Dividend Calculation",
+      "shareholder": "Shareholder",
+      "dividendRegister": "Dividend Register",
+      "paymentOption": "Payment Option"
+    }
+  }
+}

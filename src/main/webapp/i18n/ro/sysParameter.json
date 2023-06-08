@@ -1,0 +1,25 @@
+{
+  "evergentApp": {
+    "sysParameter": {
+      "home": {
+        "title": "Sys Parameters",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Sys Parameter",
+        "createOrEditLabel": "Creeare sau editare Sys Parameter",
+        "notFound": "No Sys Parameters found"
+      },
+      "created": "A fost creată o nouă entitate Sys Parameter cu identificatorul {{ param }}",
+      "updated": "Sys Parameter cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Sys Parameter cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Sys Parameter {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Parameter"
+      },
+      "id": "ID",
+      "key": "Key",
+      "value": "Value"
+    }
+  }
+}

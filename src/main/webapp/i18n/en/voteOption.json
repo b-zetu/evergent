@@ -1,0 +1,27 @@
+{
+  "evergentApp": {
+    "voteOption": {
+      "home": {
+        "title": "Vote Options",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Vote Option",
+        "createOrEditLabel": "Create or edit a Vote Option",
+        "notFound": "No Vote Options found"
+      },
+      "created": "A new Vote Option is created with identifier {{ param }}",
+      "updated": "A Vote Option is updated with identifier {{ param }}",
+      "deleted": "A Vote Option is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Vote Option {{ id }}?"
+      },
+      "detail": {
+        "title": "Vote Option"
+      },
+      "id": "ID",
+      "code": "Code",
+      "text": "Text",
+      "voteEntryXVoteOption": "Vote Entry X Vote Option",
+      "voteProposal": "Vote Proposal"
+    }
+  }
+}
