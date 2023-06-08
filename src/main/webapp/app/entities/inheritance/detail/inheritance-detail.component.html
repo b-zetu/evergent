@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="inheritance">
+      <h2 data-cy="inheritanceDetailsHeading"><span jhiTranslate="evergentApp.inheritance.detail.title">Inheritance</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ inheritance.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.inheritance.operationDate">Operation Date</span></dt>
+        <dd>
+          <span>{{ inheritance.operationDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.inheritance.documentNumber">Document Number</span></dt>
+        <dd>
+          <span>{{ inheritance.documentNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.inheritance.documentDate">Document Date</span></dt>
+        <dd>
+          <span>{{ inheritance.documentDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.inheritance.sharesNo">Shares No</span></dt>
+        <dd>
+          <span>{{ inheritance.sharesNo }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.inheritance.status">Status</span></dt>
+        <dd>
+          <span>{{ inheritance.status }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/inheritance', inheritance.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

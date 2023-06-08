@@ -1,0 +1,116 @@
+<div>
+  <h2 id="page-heading" data-cy="VoteProposalHeading">
+    <span jhiTranslate="evergentApp.voteProposal.home.title">Vote Proposals</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="evergentApp.voteProposal.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-vote-proposal"
+        [routerLink]="['/vote-proposal/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="evergentApp.voteProposal.home.createLabel"> Create a new Vote Proposal </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="voteProposals?.length === 0">
+    <span jhiTranslate="evergentApp.voteProposal.home.notFound">No Vote Proposals found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="voteProposals && voteProposals.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="title">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.voteProposal.title">Title</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="text">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.voteProposal.text">Text</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="startDate">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.voteProposal.startDate">Start Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="endDate">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.voteProposal.endDate">End Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="status">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.voteProposal.status">Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let voteProposal of voteProposals; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/vote-proposal', voteProposal.id, 'view']">{{ voteProposal.id }}</a>
+          </td>
+          <td>{{ voteProposal.title }}</td>
+          <td>{{ voteProposal.text }}</td>
+          <td>{{ voteProposal.startDate | formatMediumDate }}</td>
+          <td>{{ voteProposal.endDate | formatMediumDate }}</td>
+          <td>{{ voteProposal.status }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/vote-proposal', voteProposal.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/vote-proposal', voteProposal.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(voteProposal)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

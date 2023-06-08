@@ -1,0 +1,81 @@
+{
+  "applications": "*",
+  "changelogDate": "20230608122655",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "legal_hold",
+  "fields": [
+    {
+      "fieldName": "beneficiaryName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "amountLeft",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "poprireNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "poprireDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "poprireDocumentNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "poprireDocumentDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "sistareNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sistareDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "sistareIntrareNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sistareIntrareDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "LegalHold",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "shareholder",
+      "otherEntityRelationshipName": "legalHold",
+      "relationshipName": "shareholder",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "paymentOption",
+      "otherEntityRelationshipName": "legalHold",
+      "relationshipName": "paymentOption",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

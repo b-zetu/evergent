@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dividendShareholder">
+      <h2 data-cy="dividendShareholderDetailsHeading">
+        <span jhiTranslate="evergentApp.dividendShareholder.detail.title">Dividend Shareholder</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ dividendShareholder.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.dividendShareholder.sharesNo">Shares No</span></dt>
+        <dd>
+          <span>{{ dividendShareholder.sharesNo }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.dividendShareholder.isResident">Is Resident</span></dt>
+        <dd>
+          <span>{{ dividendShareholder.isResident }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.dividendShareholder.taxValue">Tax Value</span></dt>
+        <dd>
+          <span>{{ dividendShareholder.taxValue }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.dividendShareholder.status">Status</span></dt>
+        <dd>
+          <span>{{ dividendShareholder.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.dividendShareholder.shareholder">Shareholder</span></dt>
+        <dd>
+          <div *ngIf="dividendShareholder.shareholder">
+            <a [routerLink]="['/shareholder', dividendShareholder.shareholder.id, 'view']">{{ dividendShareholder.shareholder.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.dividendShareholder.dividendRegister">Dividend Register</span></dt>
+        <dd>
+          <div *ngIf="dividendShareholder.dividendRegister">
+            <a [routerLink]="['/dividend-register', dividendShareholder.dividendRegister.id, 'view']">{{
+              dividendShareholder.dividendRegister.id
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.dividendShareholder.paymentOption">Payment Option</span></dt>
+        <dd>
+          <div *ngIf="dividendShareholder.paymentOption">
+            <a [routerLink]="['/payment-option', dividendShareholder.paymentOption.id, 'view']">{{
+              dividendShareholder.paymentOption.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/dividend-shareholder', dividendShareholder.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

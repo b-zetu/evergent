@@ -1,0 +1,48 @@
+{
+  "evergentApp": {
+    "shareholder": {
+      "home": {
+        "title": "Shareholders",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Shareholder",
+        "createOrEditLabel": "Create or edit a Shareholder",
+        "notFound": "No Shareholders found"
+      },
+      "created": "A new Shareholder is created with identifier {{ param }}",
+      "updated": "A Shareholder is updated with identifier {{ param }}",
+      "deleted": "A Shareholder is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Shareholder {{ id }}?"
+      },
+      "detail": {
+        "title": "Shareholder"
+      },
+      "id": "ID",
+      "shareholderIdDC": "Shareholder Id DC",
+      "cnp": "Cnp",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "sharesNo": "Shares No",
+      "isPf": "Is Pf",
+      "isResident": "Is Resident",
+      "taxValue": "Tax Value",
+      "status": "Status",
+      "countryResidence": "Country Residence",
+      "countyResidence": "County Residence",
+      "cityResidence": "City Residence",
+      "villageResidence": "Village Residence",
+      "foreignLocalityResidence": "Foreign Locality Residence",
+      "streetResidence": "Street Residence",
+      "streetNo": "Street No",
+      "communication": "Communication",
+      "dividendShareholder": "Dividend Shareholder",
+      "legalHold": "Legal Hold",
+      "payment": "Payment",
+      "voteEntry": "Vote Entry",
+      "deceased": "Deceased",
+      "receiver": "Receiver",
+      "shareholderXGroup": "Shareholder X Group",
+      "paymentOption": "Payment Option"
+    }
+  }
+}

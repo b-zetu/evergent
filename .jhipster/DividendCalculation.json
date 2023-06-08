@@ -1,0 +1,41 @@
+{
+  "applications": "*",
+  "changelogDate": "20230608122653",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "dividend_calculation",
+  "fields": [
+    {
+      "fieldName": "totalNetAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "taxAmountCalculated",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "totalGrossAmount",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "DividendCalculation",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "payment",
+      "otherEntityRelationshipName": "dividendCalculation",
+      "relationshipName": "payment",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "dividendShareholder",
+      "otherEntityRelationshipName": "dividendCalculation",
+      "relationshipName": "dividendShareholder",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,135 @@
+{
+  "applications": "*",
+  "changelogDate": "20230608122651",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "shareholder",
+  "fields": [
+    {
+      "fieldName": "shareholderIdDC",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cnp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sharesNo",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isPf",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isResident",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "taxValue",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "countryResidence",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "countyResidence",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "cityResidence",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "villageResidence",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "foreignLocalityResidence",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "streetResidence",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "streetNo",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Shareholder",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "communication",
+      "otherEntityRelationshipName": "shareholder",
+      "relationshipName": "communication",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "dividendShareholder",
+      "otherEntityRelationshipName": "shareholder",
+      "relationshipName": "dividendShareholder",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "legalHold",
+      "otherEntityRelationshipName": "shareholder",
+      "relationshipName": "legalHold",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "payment",
+      "otherEntityRelationshipName": "shareholder",
+      "relationshipName": "payment",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "voteEntry",
+      "otherEntityRelationshipName": "shareholder",
+      "relationshipName": "voteEntry",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "shareholderXInheritance",
+      "otherEntityRelationshipName": "deceased",
+      "relationshipName": "deceased",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "shareholderXInheritance",
+      "otherEntityRelationshipName": "receiver",
+      "relationshipName": "receiver",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "shareholderXGroup",
+      "otherEntityRelationshipName": "shareholder",
+      "relationshipName": "shareholderXGroup",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "paymentOption",
+      "otherEntityRelationshipName": "shareholder",
+      "relationshipName": "paymentOption",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,28 @@
+{
+  "evergentApp": {
+    "dividendCalculation": {
+      "home": {
+        "title": "Dividend Calculations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Dividend Calculation",
+        "createOrEditLabel": "Create or edit a Dividend Calculation",
+        "notFound": "No Dividend Calculations found"
+      },
+      "created": "A new Dividend Calculation is created with identifier {{ param }}",
+      "updated": "A Dividend Calculation is updated with identifier {{ param }}",
+      "deleted": "A Dividend Calculation is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dividend Calculation {{ id }}?"
+      },
+      "detail": {
+        "title": "Dividend Calculation"
+      },
+      "id": "ID",
+      "totalNetAmount": "Total Net Amount",
+      "taxAmountCalculated": "Tax Amount Calculated",
+      "totalGrossAmount": "Total Gross Amount",
+      "payment": "Payment",
+      "dividendShareholder": "Dividend Shareholder"
+    }
+  }
+}

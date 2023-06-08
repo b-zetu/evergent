@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20230608122656",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "payment",
+  "fields": [
+    {
+      "fieldName": "value",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Payment",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "shareholder",
+      "otherEntityRelationshipName": "payment",
+      "relationshipName": "shareholder",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "dividendCalculation",
+      "otherEntityRelationshipName": "payment",
+      "relationshipName": "dividendCalculation",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "paymentOption",
+      "otherEntityRelationshipName": "payment",
+      "relationshipName": "paymentOption",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

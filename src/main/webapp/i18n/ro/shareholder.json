@@ -1,0 +1,48 @@
+{
+  "evergentApp": {
+    "shareholder": {
+      "home": {
+        "title": "Shareholders",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Shareholder",
+        "createOrEditLabel": "Creeare sau editare Shareholder",
+        "notFound": "No Shareholders found"
+      },
+      "created": "A fost creată o nouă entitate Shareholder cu identificatorul {{ param }}",
+      "updated": "Shareholder cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Shareholder cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Shareholder {{ id }}?"
+      },
+      "detail": {
+        "title": "Shareholder"
+      },
+      "id": "ID",
+      "shareholderIdDC": "Shareholder Id DC",
+      "cnp": "Cnp",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "sharesNo": "Shares No",
+      "isPf": "Is Pf",
+      "isResident": "Is Resident",
+      "taxValue": "Tax Value",
+      "status": "Status",
+      "countryResidence": "Country Residence",
+      "countyResidence": "County Residence",
+      "cityResidence": "City Residence",
+      "villageResidence": "Village Residence",
+      "foreignLocalityResidence": "Foreign Locality Residence",
+      "streetResidence": "Street Residence",
+      "streetNo": "Street No",
+      "communication": "Communication",
+      "dividendShareholder": "Dividend Shareholder",
+      "legalHold": "Legal Hold",
+      "payment": "Payment",
+      "voteEntry": "Vote Entry",
+      "deceased": "Deceased",
+      "receiver": "Receiver",
+      "shareholderXGroup": "Shareholder X Group",
+      "paymentOption": "Payment Option"
+    }
+  }
+}

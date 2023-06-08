@@ -1,0 +1,30 @@
+{
+  "evergentApp": {
+    "paymentOption": {
+      "home": {
+        "title": "Payment Options",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Payment Option",
+        "createOrEditLabel": "Create or edit a Payment Option",
+        "notFound": "No Payment Options found"
+      },
+      "created": "A new Payment Option is created with identifier {{ param }}",
+      "updated": "A Payment Option is updated with identifier {{ param }}",
+      "deleted": "A Payment Option is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Payment Option {{ id }}?"
+      },
+      "detail": {
+        "title": "Payment Option"
+      },
+      "id": "ID",
+      "type": "Type",
+      "detail1": "Detail 1",
+      "detail2": "Detail 2",
+      "dividendShareholder": "Dividend Shareholder",
+      "legalHold": "Legal Hold",
+      "shareholder": "Shareholder",
+      "payment": "Payment"
+    }
+  }
+}

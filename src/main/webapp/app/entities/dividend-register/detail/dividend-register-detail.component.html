@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dividendRegister">
+      <h2 data-cy="dividendRegisterDetailsHeading">
+        <span jhiTranslate="evergentApp.dividendRegister.detail.title">Dividend Register</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ dividendRegister.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.dividendRegister.referenceDate">Reference Date</span></dt>
+        <dd>
+          <span>{{ dividendRegister.referenceDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.dividendRegister.dividendGrossValue">Dividend Gross Value</span></dt>
+        <dd>
+          <span>{{ dividendRegister.dividendGrossValue }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.dividendRegister.status">Status</span></dt>
+        <dd>
+          <span>{{ dividendRegister.status }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/dividend-register', dividendRegister.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

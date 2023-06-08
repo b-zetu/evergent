@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20230608122705",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "shareholder_x_group",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ShareholderXGroup",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "shareholder",
+      "otherEntityRelationshipName": "shareholderXGroup",
+      "relationshipName": "shareholder",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "group",
+      "otherEntityRelationshipName": "shareholderXGroup",
+      "relationshipName": "group",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,103 @@
+<div>
+  <h2 id="page-heading" data-cy="ShareholderXGroupHeading">
+    <span jhiTranslate="evergentApp.shareholderXGroup.home.title">Shareholder X Groups</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="evergentApp.shareholderXGroup.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-shareholder-x-group"
+        [routerLink]="['/shareholder-x-group/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="evergentApp.shareholderXGroup.home.createLabel"> Create a new Shareholder X Group </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="shareholderXGroups?.length === 0">
+    <span jhiTranslate="evergentApp.shareholderXGroup.home.notFound">No Shareholder X Groups found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="shareholderXGroups && shareholderXGroups.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="shareholder.id">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholderXGroup.shareholder">Shareholder</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="group.id">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholderXGroup.group">Group</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let shareholderXGroup of shareholderXGroups; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/shareholder-x-group', shareholderXGroup.id, 'view']">{{ shareholderXGroup.id }}</a>
+          </td>
+          <td>
+            <div *ngIf="shareholderXGroup.shareholder">
+              <a [routerLink]="['/shareholder', shareholderXGroup.shareholder.id, 'view']">{{ shareholderXGroup.shareholder.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="shareholderXGroup.group">
+              <a [routerLink]="['/group', shareholderXGroup.group.id, 'view']">{{ shareholderXGroup.group.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/shareholder-x-group', shareholderXGroup.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/shareholder-x-group', shareholderXGroup.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(shareholderXGroup)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

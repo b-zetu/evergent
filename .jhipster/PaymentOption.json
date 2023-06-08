@@ -1,0 +1,53 @@
+{
+  "applications": "*",
+  "changelogDate": "20230608122650",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "payment_option",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "detail1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "detail2",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PaymentOption",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "dividendShareholder",
+      "otherEntityRelationshipName": "paymentOption",
+      "relationshipName": "dividendShareholder",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "legalHold",
+      "otherEntityRelationshipName": "paymentOption",
+      "relationshipName": "legalHold",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "shareholder",
+      "otherEntityRelationshipName": "paymentOption",
+      "relationshipName": "shareholder",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "payment",
+      "otherEntityRelationshipName": "paymentOption",
+      "relationshipName": "payment",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

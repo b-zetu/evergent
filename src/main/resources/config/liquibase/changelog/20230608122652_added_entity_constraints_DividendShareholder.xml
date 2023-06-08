@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity DividendShareholder.
+    -->
+    <changeSet id="20230608122652-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="shareholder_id"
+                                 baseTableName="dividend_shareholder"
+                                 constraintName="fk_dividend_shareholder__shareholder_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="shareholder"/>
+
+        <addForeignKeyConstraint baseColumnNames="dividend_register_id"
+                                 baseTableName="dividend_shareholder"
+                                 constraintName="fk_dividend_shareholder__dividend_register_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dividend_register"/>
+
+        <addForeignKeyConstraint baseColumnNames="payment_option_id"
+                                 baseTableName="dividend_shareholder"
+                                 constraintName="fk_dividend_shareholder__payment_option_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="payment_option"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,30 @@
+{
+  "evergentApp": {
+    "voteProposal": {
+      "home": {
+        "title": "Vote Proposals",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Vote Proposal",
+        "createOrEditLabel": "Creeare sau editare Vote Proposal",
+        "notFound": "No Vote Proposals found"
+      },
+      "created": "A fost creată o nouă entitate Vote Proposal cu identificatorul {{ param }}",
+      "updated": "Vote Proposal cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Vote Proposal cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Vote Proposal {{ id }}?"
+      },
+      "detail": {
+        "title": "Vote Proposal"
+      },
+      "id": "ID",
+      "title": "Title",
+      "text": "Text",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "status": "Status",
+      "voteEntry": "Vote Entry",
+      "voteOption": "Vote Option"
+    }
+  }
+}

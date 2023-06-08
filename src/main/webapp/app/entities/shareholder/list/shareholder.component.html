@@ -1,0 +1,204 @@
+<div>
+  <h2 id="page-heading" data-cy="ShareholderHeading">
+    <span jhiTranslate="evergentApp.shareholder.home.title">Shareholders</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="evergentApp.shareholder.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-shareholder"
+        [routerLink]="['/shareholder/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="evergentApp.shareholder.home.createLabel"> Create a new Shareholder </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="shareholders?.length === 0">
+    <span jhiTranslate="evergentApp.shareholder.home.notFound">No Shareholders found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="shareholders && shareholders.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="shareholderIdDC">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.shareholderIdDC">Shareholder Id DC</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="cnp">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.cnp">Cnp</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="firstName">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.firstName">First Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lastName">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.lastName">Last Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="sharesNo">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.sharesNo">Shares No</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="isPf">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.isPf">Is Pf</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="isResident">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.isResident">Is Resident</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="taxValue">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.taxValue">Tax Value</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="status">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.status">Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="countryResidence">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.countryResidence">Country Residence</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="countyResidence">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.countyResidence">County Residence</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="cityResidence">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.cityResidence">City Residence</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="villageResidence">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.villageResidence">Village Residence</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="foreignLocalityResidence">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.foreignLocalityResidence">Foreign Locality Residence</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="streetResidence">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.streetResidence">Street Residence</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="streetNo">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.streetNo">Street No</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="paymentOption.id">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.shareholder.paymentOption">Payment Option</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let shareholder of shareholders; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/shareholder', shareholder.id, 'view']">{{ shareholder.id }}</a>
+          </td>
+          <td>{{ shareholder.shareholderIdDC }}</td>
+          <td>{{ shareholder.cnp }}</td>
+          <td>{{ shareholder.firstName }}</td>
+          <td>{{ shareholder.lastName }}</td>
+          <td>{{ shareholder.sharesNo }}</td>
+          <td>{{ shareholder.isPf }}</td>
+          <td>{{ shareholder.isResident }}</td>
+          <td>{{ shareholder.taxValue }}</td>
+          <td>{{ shareholder.status }}</td>
+          <td>{{ shareholder.countryResidence }}</td>
+          <td>{{ shareholder.countyResidence }}</td>
+          <td>{{ shareholder.cityResidence }}</td>
+          <td>{{ shareholder.villageResidence }}</td>
+          <td>{{ shareholder.foreignLocalityResidence }}</td>
+          <td>{{ shareholder.streetResidence }}</td>
+          <td>{{ shareholder.streetNo }}</td>
+          <td>
+            <div *ngIf="shareholder.paymentOption">
+              <a [routerLink]="['/payment-option', shareholder.paymentOption.id, 'view']">{{ shareholder.paymentOption.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/shareholder', shareholder.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/shareholder', shareholder.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(shareholder)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

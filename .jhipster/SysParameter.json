@@ -1,0 +1,24 @@
+{
+  "applications": "*",
+  "changelogDate": "20230608122658",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "sys_parameter",
+  "fields": [
+    {
+      "fieldName": "key",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SysParameter",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

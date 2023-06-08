@@ -1,0 +1,27 @@
+{
+  "evergentApp": {
+    "dividendRegister": {
+      "home": {
+        "title": "Dividend Registers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Dividend Register",
+        "createOrEditLabel": "Create or edit a Dividend Register",
+        "notFound": "No Dividend Registers found"
+      },
+      "created": "A new Dividend Register is created with identifier {{ param }}",
+      "updated": "A Dividend Register is updated with identifier {{ param }}",
+      "deleted": "A Dividend Register is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dividend Register {{ id }}?"
+      },
+      "detail": {
+        "title": "Dividend Register"
+      },
+      "id": "ID",
+      "referenceDate": "Reference Date",
+      "dividendGrossValue": "Dividend Gross Value",
+      "status": "Status",
+      "dividendShareholder": "Dividend Shareholder"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "evergentApp": {
+    "communication": {
+      "home": {
+        "title": "Communications",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Communication",
+        "createOrEditLabel": "Creeare sau editare Communication",
+        "notFound": "No Communications found"
+      },
+      "created": "A fost creată o nouă entitate Communication cu identificatorul {{ param }}",
+      "updated": "Communication cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Communication cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Communication {{ id }}?"
+      },
+      "detail": {
+        "title": "Communication"
+      },
+      "id": "ID",
+      "type": "Type",
+      "message": "Message",
+      "status": "Status",
+      "shareholder": "Shareholder"
+    }
+  }
+}

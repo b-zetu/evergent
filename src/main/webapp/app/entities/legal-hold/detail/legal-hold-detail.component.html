@@ -1,0 +1,92 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="legalHold">
+      <h2 data-cy="legalHoldDetailsHeading"><span jhiTranslate="evergentApp.legalHold.detail.title">Legal Hold</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ legalHold.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.beneficiaryName">Beneficiary Name</span></dt>
+        <dd>
+          <span>{{ legalHold.beneficiaryName }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.type">Type</span></dt>
+        <dd>
+          <span>{{ legalHold.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.totalAmount">Total Amount</span></dt>
+        <dd>
+          <span>{{ legalHold.totalAmount }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.amountLeft">Amount Left</span></dt>
+        <dd>
+          <span>{{ legalHold.amountLeft }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.poprireNumber">Poprire Number</span></dt>
+        <dd>
+          <span>{{ legalHold.poprireNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.poprireDate">Poprire Date</span></dt>
+        <dd>
+          <span>{{ legalHold.poprireDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.poprireDocumentNumber">Poprire Document Number</span></dt>
+        <dd>
+          <span>{{ legalHold.poprireDocumentNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.poprireDocumentDate">Poprire Document Date</span></dt>
+        <dd>
+          <span>{{ legalHold.poprireDocumentDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.sistareNumber">Sistare Number</span></dt>
+        <dd>
+          <span>{{ legalHold.sistareNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.sistareDate">Sistare Date</span></dt>
+        <dd>
+          <span>{{ legalHold.sistareDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.sistareIntrareNumber">Sistare Intrare Number</span></dt>
+        <dd>
+          <span>{{ legalHold.sistareIntrareNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.sistareIntrareDate">Sistare Intrare Date</span></dt>
+        <dd>
+          <span>{{ legalHold.sistareIntrareDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.status">Status</span></dt>
+        <dd>
+          <span>{{ legalHold.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.shareholder">Shareholder</span></dt>
+        <dd>
+          <div *ngIf="legalHold.shareholder">
+            <a [routerLink]="['/shareholder', legalHold.shareholder.id, 'view']">{{ legalHold.shareholder.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="evergentApp.legalHold.paymentOption">Payment Option</span></dt>
+        <dd>
+          <div *ngIf="legalHold.paymentOption">
+            <a [routerLink]="['/payment-option', legalHold.paymentOption.id, 'view']">{{ legalHold.paymentOption.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/legal-hold', legalHold.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

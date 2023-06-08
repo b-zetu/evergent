@@ -1,0 +1,38 @@
+{
+  "evergentApp": {
+    "legalHold": {
+      "home": {
+        "title": "Legal Holds",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Legal Hold",
+        "createOrEditLabel": "Creeare sau editare Legal Hold",
+        "notFound": "No Legal Holds found"
+      },
+      "created": "A fost creată o nouă entitate Legal Hold cu identificatorul {{ param }}",
+      "updated": "Legal Hold cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Legal Hold cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Legal Hold {{ id }}?"
+      },
+      "detail": {
+        "title": "Legal Hold"
+      },
+      "id": "ID",
+      "beneficiaryName": "Beneficiary Name",
+      "type": "Type",
+      "totalAmount": "Total Amount",
+      "amountLeft": "Amount Left",
+      "poprireNumber": "Poprire Number",
+      "poprireDate": "Poprire Date",
+      "poprireDocumentNumber": "Poprire Document Number",
+      "poprireDocumentDate": "Poprire Document Date",
+      "sistareNumber": "Sistare Number",
+      "sistareDate": "Sistare Date",
+      "sistareIntrareNumber": "Sistare Intrare Number",
+      "sistareIntrareDate": "Sistare Intrare Date",
+      "status": "Status",
+      "shareholder": "Shareholder",
+      "paymentOption": "Payment Option"
+    }
+  }
+}

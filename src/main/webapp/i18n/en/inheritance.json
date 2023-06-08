@@ -1,0 +1,29 @@
+{
+  "evergentApp": {
+    "inheritance": {
+      "home": {
+        "title": "Inheritances",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Inheritance",
+        "createOrEditLabel": "Create or edit a Inheritance",
+        "notFound": "No Inheritances found"
+      },
+      "created": "A new Inheritance is created with identifier {{ param }}",
+      "updated": "A Inheritance is updated with identifier {{ param }}",
+      "deleted": "A Inheritance is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Inheritance {{ id }}?"
+      },
+      "detail": {
+        "title": "Inheritance"
+      },
+      "id": "ID",
+      "operationDate": "Operation Date",
+      "documentNumber": "Document Number",
+      "documentDate": "Document Date",
+      "sharesNo": "Shares No",
+      "status": "Status",
+      "shareholderXInheritance": "Shareholder X Inheritance"
+    }
+  }
+}

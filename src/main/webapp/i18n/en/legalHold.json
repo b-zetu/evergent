@@ -1,0 +1,38 @@
+{
+  "evergentApp": {
+    "legalHold": {
+      "home": {
+        "title": "Legal Holds",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Legal Hold",
+        "createOrEditLabel": "Create or edit a Legal Hold",
+        "notFound": "No Legal Holds found"
+      },
+      "created": "A new Legal Hold is created with identifier {{ param }}",
+      "updated": "A Legal Hold is updated with identifier {{ param }}",
+      "deleted": "A Legal Hold is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Legal Hold {{ id }}?"
+      },
+      "detail": {
+        "title": "Legal Hold"
+      },
+      "id": "ID",
+      "beneficiaryName": "Beneficiary Name",
+      "type": "Type",
+      "totalAmount": "Total Amount",
+      "amountLeft": "Amount Left",
+      "poprireNumber": "Poprire Number",
+      "poprireDate": "Poprire Date",
+      "poprireDocumentNumber": "Poprire Document Number",
+      "poprireDocumentDate": "Poprire Document Date",
+      "sistareNumber": "Sistare Number",
+      "sistareDate": "Sistare Date",
+      "sistareIntrareNumber": "Sistare Intrare Number",
+      "sistareIntrareDate": "Sistare Intrare Date",
+      "status": "Status",
+      "shareholder": "Shareholder",
+      "paymentOption": "Payment Option"
+    }
+  }
+}

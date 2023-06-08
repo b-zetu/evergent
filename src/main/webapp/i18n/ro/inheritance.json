@@ -1,0 +1,29 @@
+{
+  "evergentApp": {
+    "inheritance": {
+      "home": {
+        "title": "Inheritances",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Inheritance",
+        "createOrEditLabel": "Creeare sau editare Inheritance",
+        "notFound": "No Inheritances found"
+      },
+      "created": "A fost creată o nouă entitate Inheritance cu identificatorul {{ param }}",
+      "updated": "Inheritance cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Inheritance cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Inheritance {{ id }}?"
+      },
+      "detail": {
+        "title": "Inheritance"
+      },
+      "id": "ID",
+      "operationDate": "Operation Date",
+      "documentNumber": "Document Number",
+      "documentDate": "Document Date",
+      "sharesNo": "Shares No",
+      "status": "Status",
+      "shareholderXInheritance": "Shareholder X Inheritance"
+    }
+  }
+}

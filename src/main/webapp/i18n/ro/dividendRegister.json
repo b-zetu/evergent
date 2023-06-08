@@ -1,0 +1,27 @@
+{
+  "evergentApp": {
+    "dividendRegister": {
+      "home": {
+        "title": "Dividend Registers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Dividend Register",
+        "createOrEditLabel": "Creeare sau editare Dividend Register",
+        "notFound": "No Dividend Registers found"
+      },
+      "created": "A fost creată o nouă entitate Dividend Register cu identificatorul {{ param }}",
+      "updated": "Dividend Register cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Dividend Register cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Dividend Register {{ id }}?"
+      },
+      "detail": {
+        "title": "Dividend Register"
+      },
+      "id": "ID",
+      "referenceDate": "Reference Date",
+      "dividendGrossValue": "Dividend Gross Value",
+      "status": "Status",
+      "dividendShareholder": "Dividend Shareholder"
+    }
+  }
+}

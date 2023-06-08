@@ -1,0 +1,116 @@
+<div>
+  <h2 id="page-heading" data-cy="InheritanceHeading">
+    <span jhiTranslate="evergentApp.inheritance.home.title">Inheritances</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="evergentApp.inheritance.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-inheritance"
+        [routerLink]="['/inheritance/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="evergentApp.inheritance.home.createLabel"> Create a new Inheritance </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="inheritances?.length === 0">
+    <span jhiTranslate="evergentApp.inheritance.home.notFound">No Inheritances found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="inheritances && inheritances.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="operationDate">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.inheritance.operationDate">Operation Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="documentNumber">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.inheritance.documentNumber">Document Number</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="documentDate">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.inheritance.documentDate">Document Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="sharesNo">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.inheritance.sharesNo">Shares No</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="status">
+            <div class="d-flex">
+              <span jhiTranslate="evergentApp.inheritance.status">Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let inheritance of inheritances; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/inheritance', inheritance.id, 'view']">{{ inheritance.id }}</a>
+          </td>
+          <td>{{ inheritance.operationDate | formatMediumDate }}</td>
+          <td>{{ inheritance.documentNumber }}</td>
+          <td>{{ inheritance.documentDate | formatMediumDate }}</td>
+          <td>{{ inheritance.sharesNo }}</td>
+          <td>{{ inheritance.status }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/inheritance', inheritance.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/inheritance', inheritance.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(inheritance)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

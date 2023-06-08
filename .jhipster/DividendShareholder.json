@@ -1,0 +1,57 @@
+{
+  "applications": "*",
+  "changelogDate": "20230608122652",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "dividend_shareholder",
+  "fields": [
+    {
+      "fieldName": "sharesNo",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isResident",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "taxValue",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "DividendShareholder",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "dividendCalculation",
+      "otherEntityRelationshipName": "dividendShareholder",
+      "relationshipName": "dividendCalculation",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "shareholder",
+      "otherEntityRelationshipName": "dividendShareholder",
+      "relationshipName": "shareholder",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "dividendRegister",
+      "otherEntityRelationshipName": "dividendShareholder",
+      "relationshipName": "dividendRegister",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "paymentOption",
+      "otherEntityRelationshipName": "dividendShareholder",
+      "relationshipName": "paymentOption",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

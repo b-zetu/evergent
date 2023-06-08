@@ -1,0 +1,49 @@
+{
+  "applications": "*",
+  "changelogDate": "20230608122700",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "vote_proposal",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "text",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "VoteProposal",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "voteEntry",
+      "otherEntityRelationshipName": "voteProposal",
+      "relationshipName": "voteEntry",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "voteOption",
+      "otherEntityRelationshipName": "voteProposal",
+      "relationshipName": "voteOption",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,25 @@
+{
+  "evergentApp": {
+    "shareholderXGroup": {
+      "home": {
+        "title": "Shareholder X Groups",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Shareholder X Group",
+        "createOrEditLabel": "Creeare sau editare Shareholder X Group",
+        "notFound": "No Shareholder X Groups found"
+      },
+      "created": "A fost creată o nouă entitate Shareholder X Group cu identificatorul {{ param }}",
+      "updated": "Shareholder X Group cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Shareholder X Group cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Shareholder X Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Shareholder X Group"
+      },
+      "id": "ID",
+      "shareholder": "Shareholder",
+      "group": "Group"
+    }
+  }
+}

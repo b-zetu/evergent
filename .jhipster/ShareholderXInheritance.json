@@ -1,0 +1,34 @@
+{
+  "applications": "*",
+  "changelogDate": "20230608122704",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "shareholder_x_inheritance",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ShareholderXInheritance",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "shareholder",
+      "otherEntityRelationshipName": "deceased",
+      "relationshipName": "deceased",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "shareholder",
+      "otherEntityRelationshipName": "receiver",
+      "relationshipName": "receiver",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "inheritance",
+      "otherEntityRelationshipName": "shareholderXInheritance",
+      "relationshipName": "inheritance",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

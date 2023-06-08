@@ -1,0 +1,28 @@
+{
+  "evergentApp": {
+    "dividendCalculation": {
+      "home": {
+        "title": "Dividend Calculations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Dividend Calculation",
+        "createOrEditLabel": "Creeare sau editare Dividend Calculation",
+        "notFound": "No Dividend Calculations found"
+      },
+      "created": "A fost creată o nouă entitate Dividend Calculation cu identificatorul {{ param }}",
+      "updated": "Dividend Calculation cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Dividend Calculation cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Dividend Calculation {{ id }}?"
+      },
+      "detail": {
+        "title": "Dividend Calculation"
+      },
+      "id": "ID",
+      "totalNetAmount": "Total Net Amount",
+      "taxAmountCalculated": "Tax Amount Calculated",
+      "totalGrossAmount": "Total Gross Amount",
+      "payment": "Payment",
+      "dividendShareholder": "Dividend Shareholder"
+    }
+  }
+}
